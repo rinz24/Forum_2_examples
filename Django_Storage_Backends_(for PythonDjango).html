@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Storage Backends Example</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .download-link {
+            padding: 10px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+{% load static %}
+
+<a href="{% url 'download_file' file_id %}" class="download-link">Download File</a>
+
+</body>
+</html>

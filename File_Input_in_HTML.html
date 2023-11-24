@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Input Example</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        input {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ff82bc; 
+            border-radius: 5px; 
+            background-color: rgb(179, 185, 255); 
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<input type="file" id="fileInput" onchange="readFile()">
+<div id="output"></div>
+
+<script>
+    function readFile() {
+        const fileInput = document.getElementById('fileInput');
+        const outputDiv = document.getElementById('output');
+        const file = fileInput.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const content = e.target.result;
+                outputDiv.textContent = content;
+            };
+            reader.readAsText(file);
+        }
+    }
+</script>
+
+</body>
+</html>
